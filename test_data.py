@@ -1,10 +1,13 @@
+base_url = 'https://stellarburgers.nomoreparties.site'
+
+
 class URLCollection:
-    STELLAR_HOME_PAGE = 'https://stellarburgers.nomoreparties.site/'
-    STELLAR_LOGIN_PAGE = 'https://stellarburgers.nomoreparties.site/login'
-    STELLAR_PROFILE_PAGE = 'https://stellarburgers.nomoreparties.site/account/profile'
-    STELLAR_ORDERS_FEED_PAGE = 'https://stellarburgers.nomoreparties.site/feed'
-    STELLAR_ORDER_HISTORY = 'https://stellarburgers.nomoreparties.site/account/order-history'
-    STELLAR_FORGOT_PASSWORD_PAGE = 'https://stellarburgers.nomoreparties.site/forgot-password'
+    STELLAR_HOME_PAGE = f'{base_url}/'
+    STELLAR_LOGIN_PAGE = f'{base_url}/login'
+    STELLAR_PROFILE_PAGE = f'{base_url}/account/profile'
+    STELLAR_ORDERS_FEED_PAGE = f'{base_url}/feed'
+    STELLAR_ORDER_HISTORY = f'{base_url}/account/order-history'
+    STELLAR_FORGOT_PASSWORD_PAGE = f'{base_url}/forgot-password'
 
 
 class TestData:

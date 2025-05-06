@@ -3,6 +3,8 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from locators.orders_feed_locators import OrdersFeedLocators
+from locators.profile_page_locators import ProfilePageLocators
 
 
 class BasePage:
@@ -15,7 +17,7 @@ class BasePage:
     def get_current_url(self):
         return self.driver.current_url
 
-    def find_element(self, locator, timeout=10):
+    def find_element(self, locator, timeout=20):
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     def wait_for_element(self, locator, timeout=20):
@@ -28,7 +30,7 @@ class BasePage:
         self.find_element(locator, timeout).send_keys(text)
 
     def find_order_by_text(self, text, timeout=10):
-        locator = (By.XPATH, f'.//p[@class="text text_type_digits-default" and text()="{text}"]')
+        locator = (By.XPATH, OrdersFeedLocators.ORDER_NUMBER.format(text))
         return self.find_element(locator, timeout)
 
     def get_text_of_order_counter(self, locator):
@@ -44,7 +46,7 @@ class BasePage:
 
         if elements:
             last_element = elements[-1]
-            text_element = last_element.find_element(By.XPATH, './/p[@class="text text_type_digits-default"]')
+            text_element = last_element.find_element(ProfilePageLocators.ORDER_NUMBER)
             return text_element.text
         else:
             raise ValueError("Элементы не найдены.")
@@ -55,7 +57,7 @@ class BasePage:
         )
 
     def order_is_displayed(self, text):
-        locator = (By.XPATH, f'.//p[@class="text text_type_digits-default" and text()="{text}"]')
+        locator = (By.XPATH, OrdersFeedLocators.ORDER_NUMBER.format(text))
         element = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(locator))
         return element.is_displayed()
 

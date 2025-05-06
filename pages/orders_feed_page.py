@@ -10,7 +10,7 @@ class OrdersFeedPageStellar(BasePage):
 
     @allure.step('Ожидание загрузки окна "Лента заказов"')
     def wait_for_load_panel_orders_feed(self):
-        self.wait_for_element(OrdersFeedLocators.PANEL_ORDERS_FEED)
+        self.find_element(OrdersFeedLocators.PANEL_ORDERS_FEED)
 
     @allure.step('Проверка отображения окна "Лента заказов"')
     def check_panel_orders_feed_is_displayed(self):
@@ -26,11 +26,11 @@ class OrdersFeedPageStellar(BasePage):
 
     @allure.step('Ожидание загрузки информации о заказе')
     def wait_for_load_info_about_an_order(self):
-        self.wait_for_element(OrdersFeedLocators.PANEL_INFO_ABOUT_AN_ORDER)
+        self.find_element(OrdersFeedLocators.PANEL_INFO_ABOUT_AN_ORDER)
 
     @allure.step('Ожидание загрузки заказа "В работе"')
     def wait_for_load_order_in_process(self):
-        self.wait_for_element(OrdersFeedLocators.ID_ORDER_IN_PROCCESS)
+        self.find_element(OrdersFeedLocators.ID_ORDER_IN_PROCCESS)
 
     @allure.step('Проверка отображения информации о заказе')
     def check_info_about_an_order_is_displayed(self):

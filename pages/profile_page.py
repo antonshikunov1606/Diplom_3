@@ -27,11 +27,11 @@ class ProfilePageStellar(BasePage):
 
     @allure.step('Ожидание загрузки страницы личного кабинета')
     def wait_for_load_profile_page(self):
-        self.wait_for_element(ProfilePageLocators.PANEL_PROFILE)
+        self.find_element(ProfilePageLocators.PANEL_PROFILE)
 
     @allure.step('Ожидание загрузки истории заказов')
     def wait_for_load_order_history(self):
-        self.wait_for_element(ProfilePageLocators.PANEL_ORDER_HISTORY)
+        self.find_element(ProfilePageLocators.PANEL_ORDER_HISTORY)
 
     @allure.step('Проверка отображения истории заказов')
     def check_order_history_is_displayed(self):

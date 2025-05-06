@@ -1,5 +1,4 @@
 import allure
-
 from locators.home_page_locators import HomePageLocators
 from pages.base_page import BasePage
 from test_data import URLCollection
@@ -15,19 +14,19 @@ class HomePageStellar(BasePage):
 
     @allure.step('Ожидание загрузки главной страницы Stellar')
     def wait_for_load_home_page(self):
-        self.wait_for_element(HomePageLocators.PANEL_HOME_PAGE)
+        self.find_element(HomePageLocators.PANEL_HOME_PAGE)
 
     @allure.step('Ожидание загрузки окна "Конструктор"')
     def wait_for_load_panel_constructor(self):
-        self.wait_for_element(HomePageLocators.PANEL_CONSTRUCTOR)
+        self.find_element(HomePageLocators.PANEL_CONSTRUCTOR)
 
     @allure.step('Ожидание загрузки окна "Детали ингредиента"')
     def wait_for_load_panel_ingredient_details(self):
-        self.wait_for_element(HomePageLocators.PANEL_INGREDIENT_DETAILS)
+        self.find_element(HomePageLocators.PANEL_INGREDIENT_DETAILS)
 
     @allure.step('Ожидание загрузки идентификатора заказа')
     def wait_for_load_order_id(self):
-        self.wait_for_element(HomePageLocators.ORDER_ID)
+        self.find_element(HomePageLocators.ORDER_ID)
 
     @allure.step('Ожидание закрытия модального окна заказа')
     def wait_for_close_modal_panel(self):

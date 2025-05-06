@@ -15,7 +15,7 @@ class LoginPageStellar(BasePage):
 
     @allure.step('Ожидание загрузки страницы Логина')
     def wait_for_load_login_page(self):
-        self.wait_for_element(LoginPageLocators.PANEL_LOGIN)
+        self.find_element(LoginPageLocators.PANEL_LOGIN)
 
     @allure.step('Клик по кнопке "Восстановить пароль"')
     def click_button_recover_password(self):
@@ -23,7 +23,7 @@ class LoginPageStellar(BasePage):
 
     @allure.step('Ожидание загрузки формы восстановления пароля')
     def wait_for_load_form_recover_password(self):
-        self.wait_for_element(LoginPageLocators.FORM_RECOVER_PASSWORD)
+        self.find_element(LoginPageLocators.FORM_RECOVER_PASSWORD)
 
     @allure.step('Ввод email в поле логина')
     def enter_email_in_login(self):
@@ -51,7 +51,7 @@ class LoginPageStellar(BasePage):
 
     @allure.step('Ожидание загрузки кнопки "Сохранить"')
     def wait_for_load_button_save(self):
-        self.wait_for_element(LoginPageLocators.BUTTON_SAVE)
+        self.find_element(LoginPageLocators.BUTTON_SAVE)
 
     @allure.step('Проверка отображения формы логина')
     def check_login_panel_is_displayed(self):
