@@ -20,9 +20,6 @@ class BasePage:
     def find_element(self, locator, timeout=20):
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
-    def wait_for_element(self, locator, timeout=20):
-        return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
-
     def click_element(self, locator, timeout=10):
         self.find_element(locator, timeout).click()
 
@@ -46,7 +43,7 @@ class BasePage:
 
         if elements:
             last_element = elements[-1]
-            text_element = last_element.find_element(ProfilePageLocators.ORDER_NUMBER)
+            text_element = last_element.find_element(*ProfilePageLocators.ORDER_NUMBER)
             return text_element.text
         else:
             raise ValueError("Элементы не найдены.")
